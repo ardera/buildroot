@@ -77,7 +77,7 @@ def main(args):
   parser.add_option('--print-hash',
                     help='Print the hash of the sysroot for the given arch.')
   options, _ = parser.parse_args(args)
-  if not sys.platform.startswith('linux'):
+  if not (sys.platform.startswith('linux') or sys.platform.startswith('darwin')):
     return 0
 
   if options.print_hash:
